@@ -12,7 +12,7 @@ const NavWrapper = styled.div`
 `;
 
 const NavLink = ({ page, selected }) => {
-  const title = page.charAt(0).toUpperCase() + page.slice(1);
+  const title = page.charAt(0).toUpperCase() + page.slice(1).split(':')[0];
 
   return (
     <CustomLink to={`/${page}`} selected={selected}>
@@ -28,7 +28,7 @@ const NavBar = () => {
     <NavWrapper>
       <NavLink page='home' selected={page === 'home'} />
       <NavLink page='create' selected={page === 'create'} />
-      <NavLink page='edit' selected={page === 'edit'} />
+      <NavLink page='edit:id' selected={page === 'edit'} />
     </NavWrapper>
   );
 };
